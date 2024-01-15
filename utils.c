@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 16:32:04 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/15 13:26:47 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/01/15 13:43:26 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,42 @@ int	contain_valid_numbers(char *str)
 		}
 		else
 			return (0);
+	}
+	return (1);
+}
+
+/**
+ * Check if arguments passed by argv are valid numbers, positive or negative.
+ * A sign before a number is allowed.
+ * 
+ * Valid argument: 45
+ * Valid argument: -10
+ * Valid argument: +5
+ * 
+ * Invalid argument: a4
+ * Invalid argument: --10
+ * Invalid argument: z
+*/
+int	contain_valid_arguments(int argc, char **argv)
+{
+	int i;
+
+	i = 0;
+	while (++i < argc)
+	{
+		while (*argv[i])
+		{
+			if (is_digit(*argv[i]))
+				argv[i]++;
+			else if (*argv[i] == '+' || *argv[i] == '-')
+			{
+				argv[i]++;
+				if (!is_digit(*argv[i]))
+					return (0);
+			}
+			else
+				return (0);
+		}
 	}
 	return (1);
 }
