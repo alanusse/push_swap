@@ -6,11 +6,18 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 12:41:24 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/15 12:59:44 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/01/15 13:05:30 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
+
+int	is_digit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
+}
 
 size_t	ft_strlen(char *s)
 {
