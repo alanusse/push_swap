@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/14 16:30:43 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/22 16:39:33 by aglanuss         ###   ########.fr       */
+/*   Created: 2024/01/22 17:08:40 by aglanuss          #+#    #+#             */
+/*   Updated: 2024/01/22 17:12:54 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
-# include <unistd.h>
-# include <limits.h>
+#include "utils.h"
+#include "libft.h"
 
-int		print_error(void);
-int		check_arguments(int argc, char **argv);
-int		is_sorted(int argc, char **argv);
+int	is_sorted(int argc, char **argv)
+{
+	int	i;
 
-#endif
+	i = 0;
+	while (++i < argc)
+	{
+		if (i > 1 && (ft_atol(argv[i]) < ft_atol(argv[i - 1])))
+			return (0);
+	}
+	return (1);
+}

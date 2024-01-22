@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   print_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/14 16:30:43 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/22 16:39:33 by aglanuss         ###   ########.fr       */
+/*   Created: 2024/01/22 17:04:02 by aglanuss          #+#    #+#             */
+/*   Updated: 2024/01/22 17:04:25 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
-# include <unistd.h>
-# include <limits.h>
+#include "utils.h"
 
-int		print_error(void);
-int		check_arguments(int argc, char **argv);
-int		is_sorted(int argc, char **argv);
-
-#endif
+/**
+ * Print "Error" on standard output and return 0.
+*/
+int	print_error(void)
+{
+	write(1, "Error\n", 6);
+	return (0);
+}
