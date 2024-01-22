@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:55:16 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/22 17:52:38 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/01/22 18:33:02 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,19 @@ void lstclear(t_list **lst)
 		free(*lst);
 		*lst = tmp;
 	}
+}
+
+int	lstsize(t_list **lst)
+{
+	int			count;
+	t_list	*current;
+
+	count = 0;
+	current = *lst;
+	while (current)
+	{
+		current = current->next;
+		count++;
+	}
+	return (count);
 }
