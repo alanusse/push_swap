@@ -6,7 +6,7 @@
 #    By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/06 13:43:05 by aglanuss          #+#    #+#              #
-#    Updated: 2024/01/22 17:12:00 by aglanuss         ###   ########.fr        #
+#    Updated: 2024/01/22 17:37:11 by aglanuss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ RM = rm -rf
 
 INCLUDES = push_swap.h utils.h libft.h
 
-SRCS = push_swap.c print_error.c check_arguments.c is_sorted.c ft_atoi.c ft_atol.c ft_isdigit.c ft_strchr.c ft_strcmp.c ft_strlen.c
+SRCS = push_swap.c print_error.c lists.c check_arguments.c is_sorted.c ft_atoi.c ft_atol.c ft_isdigit.c ft_strchr.c ft_strcmp.c ft_strlen.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
