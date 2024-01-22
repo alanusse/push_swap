@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 12:41:44 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/22 16:40:06 by aglanuss         ###   ########.fr       */
+/*   Created: 2024/01/22 16:47:00 by aglanuss          #+#    #+#             */
+/*   Updated: 2024/01/22 16:59:07 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <stdlib.h>
+#include "libft.h"
 
-int			ft_isdigit(int c);
-size_t		ft_strlen(char *s);
-char		*ft_strchr(char *s, int c);
-int			ft_strcmp(char *s1, char *s2);
-int	    ft_atoi(const char *str);
-long		ft_atol(const char *str);
+long	ft_atol(const char *str)
+{
+	long	total;
+	int		sign;
 
-#endif
+	total = 0;
+	sign = 1;
+	while (*str == '\t' || *str == '\n' || *str == '\v' || *str == '\f'
+		|| *str == '\r' || *str == ' ')
+		str++;
+	if (*str == '+' || *str == '-')
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	while (ft_isdigit(*str))
+	{
+		total = (total * 10) + (*str - '0');
+		str++;
+	}
+	return (total * sign);
+}

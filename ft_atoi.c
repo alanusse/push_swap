@@ -1,53 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.c                                            :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 12:41:24 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/22 15:16:54 by aglanuss         ###   ########.fr       */
+/*   Created: 2024/01/22 16:47:48 by aglanuss          #+#    #+#             */
+/*   Updated: 2024/01/22 16:59:03 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "libft.h"
 
-int	ft_isdigit(int c)
+int	ft_atoi(const char *str)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
-
-size_t	ft_strlen(char *s)
-{
-	size_t	count;
-
-	if (!s)
-		return (0);
-	count = 0;
-	while (s[count])
-		count++;
-	return (count);
-}
-
-char	*ft_strchr(char *s, int c)
-{
-	if (!s)
-		return (NULL);
-	while (*s)
-	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
-	}
-	return (NULL);
-}
-
-long	ft_atol(const char *str)
-{
-	long	total;
-	int		sign;
+	int	total;
+	int	sign;
 
 	total = 0;
 	sign = 1;
@@ -66,20 +34,4 @@ long	ft_atol(const char *str)
 		str++;
 	}
 	return (total * sign);
-}
-
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	i;
-
-	i = 0;
-	if (!s1 || !s2)
-		return (0);
-	while (s1[i] || s2[i])
-	{
-		if (s1[i] != s2[i])
-			return (0);
-		i++;
-	}
-	return (1);
 }

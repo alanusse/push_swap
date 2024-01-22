@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 12:41:44 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/22 16:40:06 by aglanuss         ###   ########.fr       */
+/*   Created: 2024/01/22 16:57:19 by aglanuss          #+#    #+#             */
+/*   Updated: 2024/01/22 16:57:28 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <stdlib.h>
+#include "libft.h"
 
-int			ft_isdigit(int c);
-size_t		ft_strlen(char *s);
-char		*ft_strchr(char *s, int c);
-int			ft_strcmp(char *s1, char *s2);
-int	    ft_atoi(const char *str);
-long		ft_atol(const char *str);
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
 
-#endif
+	i = 0;
+	if (!s1 || !s2)
+		return (0);
+	while (s1[i] || s2[i])
+	{
+		if (s1[i] != s2[i])
+			return (0);
+		i++;
+	}
+	return (1);
+}

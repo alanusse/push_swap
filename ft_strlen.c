@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 12:41:44 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/22 16:40:06 by aglanuss         ###   ########.fr       */
+/*   Created: 2024/01/22 16:55:35 by aglanuss          #+#    #+#             */
+/*   Updated: 2024/01/22 16:57:33 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <stdlib.h>
+#include "libft.h"
 
-int			ft_isdigit(int c);
-size_t		ft_strlen(char *s);
-char		*ft_strchr(char *s, int c);
-int			ft_strcmp(char *s1, char *s2);
-int	    ft_atoi(const char *str);
-long		ft_atol(const char *str);
+size_t	ft_strlen(char *s)
+{
+	size_t	count;
 
-#endif
+	if (!s)
+		return (0);
+	count = 0;
+	while (s[count])
+		count++;
+	return (count);
+}
