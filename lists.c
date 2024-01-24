@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:55:16 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/22 18:33:02 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/01/24 12:38:17 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 }
 
-void lstclear(t_list **lst)
+void	lstclear(t_list **lst)
 {
 	t_list	*tmp;
 
@@ -54,7 +54,7 @@ void lstclear(t_list **lst)
 int	lstsize(t_list **lst)
 {
 	int			count;
-	t_list	*current;
+	t_list		*current;
 
 	count = 0;
 	current = *lst;
