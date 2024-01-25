@@ -6,17 +6,16 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 13:42:35 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/22 19:25:06 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:48:50 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "utils.h"
-#include "lists.h"
 #include "libft.h"
-#include "movements.h"
+#include "algorithms.h"
 
-t_list	*init_stack(t_list **lst, int argc, char **argv)
+static t_list	*init_stack(t_list **lst, int argc, char **argv)
 {
 	int	i;
 	t_list	*node;
@@ -35,19 +34,13 @@ t_list	*init_stack(t_list **lst, int argc, char **argv)
 	return (*lst);
 }
 
-#include <printf.h>
-void print_list(t_list **lst, char *name)
+static void	push_swap(t_list **stack_a)
 {
-	t_list *current;
+	int	lst_size;
 
-	current = *lst;
-	printf("%s\n", name);
-	while (current)
-	{
-		printf("%i\n", current->content);
-		current = current->next;
-	}
-	printf("\n");
+	lst_size = lstsize(stack_a);
+	if (lst_size == 2)
+		return (two_numbers(stack_a));
 }
 
 int	main(int argc, char **argv)
@@ -55,20 +48,17 @@ int	main(int argc, char **argv)
 	t_list	*stack_a;
 	t_list	*stack_b;
 
+	stack_a = NULL;
+	stack_b = NULL;
 	if (!check_arguments(argc, argv))
 		return (print_error());
 	if (argc > 2 && !is_sorted(argc, argv))
 	{
 		if (!init_stack(&stack_a, argc, argv))
 			return (print_error());
-		print_list(&stack_a, "stack a:");
-		print_list(&stack_b, "stack b:");
-		pb(&stack_a, &stack_b);
-		// sb(&stack_b);
-		print_list(&stack_a, "stack a:");
-		print_list(&stack_b, "stack b:");
+		push_swap(&stack_a);
+		lstclear(&stack_a);
+		lstclear(&stack_b);
 	}
-	lstclear(&stack_a);
-	lstclear(&stack_b);
 	return (0);
 }

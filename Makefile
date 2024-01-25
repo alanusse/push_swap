@@ -6,7 +6,7 @@
 #    By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/06 13:43:05 by aglanuss          #+#    #+#              #
-#    Updated: 2024/01/24 12:01:45 by aglanuss         ###   ########.fr        #
+#    Updated: 2024/01/25 13:31:38 by aglanuss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,11 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -rf
 
-INCLUDES = push_swap.h utils.h libft.h
+INCLUDES = push_swap.h utils.h libft.h algorithms.h
 
 SRCS = push_swap.c print_error.c lists.c check_arguments.c push.c rotate.c\
 			 rev_rotate.c swap.c is_sorted.c ft_atoi.c ft_atol.c ft_isdigit.c\
-			 ft_strchr.c ft_strcmp.c ft_strlen.c
+			 ft_strchr.c ft_strcmp.c ft_strlen.c algorithms.c
 
 OBJS = $(SRCS:.c=.o)
 

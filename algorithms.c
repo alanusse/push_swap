@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   other_movements.c                                  :+:      :+:    :+:   */
+/*   algorithms.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 12:13:55 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/24 01:57:26 by aglanuss         ###   ########.fr       */
+/*   Created: 2024/01/25 13:21:48 by aglanuss          #+#    #+#             */
+/*   Updated: 2024/01/25 13:28:08 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "movements.h"
+#include "algorithms.h"
 
-void  ss(t_list **stack_a, t_list **stack_b)
+void  two_numbers(t_list **stack_a)
 {
   sa(stack_a);
-  sb(stack_b);
-}
-
-void  rr(t_list **stack_a, t_list **stack_b)
-{
-  ra(stack_a);
-  rb(stack_b);
-}
-
-void  rrr(t_list **stack_a, t_list **stack_b)
-{
-  rra(stack_a);
-  rrb(stack_b);
 }
