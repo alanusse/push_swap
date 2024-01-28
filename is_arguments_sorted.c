@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_sorted.c                                        :+:      :+:    :+:   */
+/*   is_arguments_sorted.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 17:08:40 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/24 12:28:05 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/01/28 15:13:59 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 #include "libft.h"
 
-int	is_sorted(int argc, char **argv)
+int	is_arguments_sorted(int argc, char **argv)
 {
 	int	i;
 

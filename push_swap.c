@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 13:42:35 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/25 13:48:50 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/01/28 15:13:08 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,26 @@
 static t_list	*init_stack(t_list **lst, int argc, char **argv)
 {
 	int	i;
-	t_list	*node;
+	t_list	*new;
 
 	i = 0;
 	while (++i < argc)
 	{
-		node = lstnew(ft_atoi(argv[i]));
-		if (!node)
+		new = lstnew(ft_atoi(argv[i]));
+		if (!new)
 		{
 			lstclear(lst);
 			return (NULL);
 		}
-		lstadd_back(lst, node);
+		lstadd_back(lst, new);
 	}
 	return (*lst);
 }
 
 static void	push_swap(t_list **stack_a)
 {
-	int	lst_size;
-
-	lst_size = lstsize(stack_a);
-	if (lst_size == 2)
-		return (two_numbers(stack_a));
+	if (lstsize(stack_a) <= 5)
+		return (sort_small_stack(stack_a));
 }
 
 int	main(int argc, char **argv)
@@ -52,7 +49,7 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	if (!check_arguments(argc, argv))
 		return (print_error());
-	if (argc > 2 && !is_sorted(argc, argv))
+	if (argc > 2 && !is_arguments_sorted(argc, argv))
 	{
 		if (!init_stack(&stack_a, argc, argv))
 			return (print_error());

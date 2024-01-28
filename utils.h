@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 16:30:43 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/22 16:39:33 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/01/28 16:34:43 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 # define UTILS_H
 # include <unistd.h>
 # include <limits.h>
+# include "lists.h"
 
 int		print_error(void);
 int		check_arguments(int argc, char **argv);
-int		is_sorted(int argc, char **argv);
+int		is_arguments_sorted(int argc, char **argv);
+int   is_lst_sorted(t_list **lst);
+int   get_lst_content_by_idx(t_list **lst, int idx);
 
 #endif
