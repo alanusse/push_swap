@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:21:59 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/28 16:55:51 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/01/28 18:11:55 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,6 @@
 # include "utils.h"
 
 void  sort_small_stack(t_list **stack_a);
+void  sort_three_numbers(t_list **stack_a);
 
 #endif
