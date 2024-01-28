@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algorithms.h                                       :+:      :+:    :+:   */
+/*   sort_four_numbers.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 13:21:59 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/28 18:13:37 by aglanuss         ###   ########.fr       */
+/*   Created: 2024/01/28 18:14:06 by aglanuss          #+#    #+#             */
+/*   Updated: 2024/01/28 18:53:16 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ALGORITHMS_H
-# define ALGORITHMS_H
-# include "movements.h"
-# include "utils.h"
+#include "algorithms.h"
 
-void  sort_small_stack(t_list **stack_a);
-void  sort_three_numbers(t_list **stack_a);
-void  sort_four_numbers(t_list **stack_a, t_list **stack_b);
+void  sort_four_numbers(t_list **stack_a, t_list **stack_b)
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int biggest;
 
-#endif
+  biggest = get_lst_bigger_content(stack_a);
+
+}
