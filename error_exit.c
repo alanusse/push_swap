@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_error.c                                      :+:      :+:    :+:   */
+/*   error_exit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 17:04:02 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/24 12:27:21 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/01/30 13:59:31 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-/**
- * Print "Error" on standard output and return 0.
-*/
-int	print_error(void)
+int	error_exit(void)
 {
 	write(1, "Error\n", 6);
+	exit(EXIT_FAILURE);
 	return (0);
 }
