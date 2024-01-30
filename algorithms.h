@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:21:59 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/28 18:13:37 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/01/30 14:11:36 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@
 
 void  sort_small_stack(t_list **stack_a);
 void  sort_three_numbers(t_list **stack_a);
-void  sort_four_numbers(t_list **stack_a, t_list **stack_b);
+void  sort_four_numbers(t_list **stack_a);
 
 #endif
