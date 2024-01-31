@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 13:42:35 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/30 14:11:15 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/01/31 13:48:17 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ static t_list	*init_stack(t_list **lst, int argc, char **argv)
 	return (*lst);
 }
 
-static void	push_swap(t_list **stack_a)
+static void	push_swap(t_list **stack_a, t_list **stack_b)
 {
 	if (lstsize(stack_a) <= 5)
-		return (sort_small_stack(stack_a));
+		return (sort_small_stack(stack_a, stack_b));
 }
 
 int	main(int argc, char **argv)
@@ -53,7 +53,7 @@ int	main(int argc, char **argv)
 	{
 		if (!init_stack(&stack_a, argc, argv))
 			return (error_exit());
-		push_swap(&stack_a);
+		push_swap(&stack_a, &stack_b);
 		lstclear(&stack_a);
 		lstclear(&stack_b);
 	}
