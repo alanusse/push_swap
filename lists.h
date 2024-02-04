@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:50:44 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/22 18:33:32 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/02/04 16:11:15 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 typedef struct s_list
 {
+  int         idx;
 	int					content;
 	struct s_list		*next;
 }	t_list;

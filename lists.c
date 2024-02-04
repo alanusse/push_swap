@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:55:16 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/24 12:38:17 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/02/04 16:15:37 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_list	*lstnew(int content)
 	node = (t_list *)malloc(sizeof(t_list));
 	if (!node)
 		return (NULL);
+  node->idx = -1;
 	node->content = content;
 	node->next = NULL;
 	return (node);
