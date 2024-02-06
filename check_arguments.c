@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 17:09:28 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/24 12:27:38 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/02/06 09:36:17 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ static int	is_valid_number(char *str)
 	}
 	return (1);
 }
-
+// TODO: enhance validation
+// TODO: like check 0001 is 1, check +1 is 1, 2^64 fails
 /**
  * Check if arguments are valid.
  * Returns 1 if are valid or 0 if are not valid.
