@@ -6,7 +6,7 @@
 #    By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/06 13:43:05 by aglanuss          #+#    #+#              #
-#    Updated: 2024/02/04 02:50:52 by aglanuss         ###   ########.fr        #
+#    Updated: 2024/02/06 13:01:05 by aglanuss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ INCLUDES = push_swap.h utils.h libft.h algorithms.h
 SRCS = push_swap.c error_exit.c utils.c lists.c check_arguments.c push.c\
 			 rotate.c rev_rotate.c swap.c is_arguments_sorted.c ft_atoi.c ft_atol.c\
 			 ft_isdigit.c ft_strchr.c ft_strcmp.c ft_strlen.c algorithms.c\
-			 sort_three_numbers.c
+			 sort_three_numbers.c index_stack.c
 
 OBJS = $(SRCS:.c=.o)
 

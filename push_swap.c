@@ -6,35 +6,11 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 13:42:35 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/02/06 09:44:08 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/02/06 14:02:48 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "utils.h"
-#include "libft.h"
-#include "algorithms.h"
-
-// static void index_stack(t_list **lst)
-// {
-//   t_list  *current;
-//   int     idx;
-//   int     i;
-
-
-//   idx = 0;
-//   i = lstsize(lst);
-//   while (current)
-//   {
-//     while (i > 0)
-//     {
-//       current = *lst;
-//       i--;
-//       idx++;
-//     }
-//     current = current->next;
-//   }
-// }
 
 static t_list	*init_stack(t_list **lst, int argc, char **argv)
 {
@@ -60,7 +36,7 @@ static void	push_swap(t_list **stack_a, t_list **stack_b)
 	if (lstsize(stack_a) <= 5)
 		return (sort_small_stack(stack_a, stack_b));
 }
-
+#include <printf.h>
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
@@ -74,6 +50,7 @@ int	main(int argc, char **argv)
 	{
 		if (!init_stack(&stack_a, argc, argv))
 			return (error_exit());
+    index_stack(&stack_a);
 		push_swap(&stack_a, &stack_b);
 		lstclear(&stack_a);
 		lstclear(&stack_b);
