@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 18:09:13 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/28 18:11:29 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/02/06 09:53:47 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void fill_three_nums(t_list **lst, int *a, int *b, int *c)
 {
-  *a = get_lst_content_by_idx(lst, 0);
-  *b = get_lst_content_by_idx(lst, 1);
-  *c = get_lst_content_by_idx(lst, 2);
+  *a = get_lstitem_by_pos(lst, 0)->content;
+  *b = get_lstitem_by_pos(lst, 1)->content;
+  *c = get_lstitem_by_pos(lst, 2)->content;
 }
 
 void sort_three_numbers(t_list **stack_a)

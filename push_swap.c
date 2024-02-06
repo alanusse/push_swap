@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 13:42:35 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/02/04 22:33:55 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/02/06 09:44:08 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,26 @@
 #include "libft.h"
 #include "algorithms.h"
 
-static void index_stack(t_list **lst)
-{
-  t_list  *current;
-  int     idx;
-  int     i;
+// static void index_stack(t_list **lst)
+// {
+//   t_list  *current;
+//   int     idx;
+//   int     i;
 
 
-  idx = 0;
-  i = lstsize(lst);
-  while (current)
-  {
-    while (i > 0)
-    {
-      current = *lst;
-      i--;
-      idx++;
-    }
-    current = current->next;
-  }
-}
+//   idx = 0;
+//   i = lstsize(lst);
+//   while (current)
+//   {
+//     while (i > 0)
+//     {
+//       current = *lst;
+//       i--;
+//       idx++;
+//     }
+//     current = current->next;
+//   }
+// }
 
 static t_list	*init_stack(t_list **lst, int argc, char **argv)
 {

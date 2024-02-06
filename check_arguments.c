@@ -6,18 +6,13 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 17:09:28 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/02/06 09:36:17 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/02/06 09:42:27 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 #include "libft.h"
 
-/**
- * Check if string is a valid integer number.
- * 
- * If number is greater than MAX_INT or less than MIN_INT returns 0.
-*/
 static int	is_valid_int(char *str)
 {
 	long	result;
@@ -28,19 +23,6 @@ static int	is_valid_int(char *str)
 	return (1);
 }
 
-/**
- * Check if string is a valid number.
- * 
- * Valid examples:
- * - 43
- * - -92
- * 
- * Invalid examples:
- * - --43
- * - 2-34
- * - 5f89
- * - +90
-*/
 static int	is_valid_number(char *str)
 {
 	int	i;

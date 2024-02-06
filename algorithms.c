@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:21:48 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/02/04 02:52:19 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/02/06 09:53:05 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /**
  * Find index of smallest number of the stack.
 */
-int  get_idx_smallest_num(t_list **stack)
+static int  get_smallest_num_pos(t_list **stack)
 {
   t_list  *current;
   int     smallest_idx;
@@ -26,7 +26,7 @@ int  get_idx_smallest_num(t_list **stack)
   i = 0;
   while (current)
   {
-    if (current->content < get_lst_content_by_idx(stack, smallest_idx))
+    if (current->content < get_lstitem_by_pos(stack, smallest_idx)->content)
       smallest_idx = i;
     current = current->next;
     i++;
@@ -36,17 +36,17 @@ int  get_idx_smallest_num(t_list **stack)
 
 static void  sort_four_numbers(t_list **stack_a, t_list **stack_b)
 {
-  int smallest_num_idx;
+  int smallest_num_pos;
 
-  smallest_num_idx = get_idx_smallest_num(stack_a);
-  if (smallest_num_idx == 1)
+  smallest_num_pos = get_smallest_num_pos(stack_a);
+  if (smallest_num_pos == 1)
     sa(stack_a);
-  else if (smallest_num_idx == 2)
+  else if (smallest_num_pos == 2)
   {
     rra(stack_a);
     rra(stack_a);
   }
-  else if (smallest_num_idx == 3)
+  else if (smallest_num_pos == 3)
     rra(stack_a);
   pb(stack_a, stack_b);
   sort_three_numbers(stack_a);
@@ -55,22 +55,22 @@ static void  sort_four_numbers(t_list **stack_a, t_list **stack_b)
 
 static void	sort_five_numbers(t_list **stack_a, t_list **stack_b)
 {
-	int smallest_num_idx;
+	int smallest_num_pos;
 
-	smallest_num_idx = get_idx_smallest_num(stack_a);
-	if (smallest_num_idx == 1)
+	smallest_num_pos = get_smallest_num_pos(stack_a);
+	if (smallest_num_pos == 1)
 		sa(stack_a);
-	else if (smallest_num_idx == 2)
+	else if (smallest_num_pos == 2)
 	{
 		ra(stack_a);
 		ra(stack_a);
 	}
-	else if (smallest_num_idx == 3)
+	else if (smallest_num_pos == 3)
 	{
 		rra(stack_a);
 		rra(stack_a);
 	}
-	else if (smallest_num_idx == 4)
+	else if (smallest_num_pos == 4)
 		rra(stack_a);
 	pb(stack_a, stack_b);
 	sort_four_numbers(stack_a, stack_b);

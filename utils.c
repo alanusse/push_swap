@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 14:58:18 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/31 23:53:00 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/02/06 09:52:30 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,21 @@ int is_lst_sorted(t_list **lst)
   return (1);
 }
 
-int get_lst_content_by_idx(t_list **lst, int idx)
+t_list   *get_lstitem_by_pos(t_list **lst, int idx)
 {
   int     i;
   t_list  *current;
 
   if (!lst || !*lst)
-    return (0);
+    return (NULL);
   i = 0;
   current = *lst;
   while(i <= idx && current)
   {
     if (i == idx)
-      return (current->content);
+      return (current);
     i++;
     current = current->next;
   }
-  return (0);
+  return (NULL);
 }
