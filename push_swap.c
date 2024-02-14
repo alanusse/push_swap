@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 13:42:35 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/31 13:48:17 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/02/10 09:58:09 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,14 @@ static t_list	*init_stack(t_list **lst, int argc, char **argv)
 
 static void	push_swap(t_list **stack_a, t_list **stack_b)
 {
-	if (lstsize(stack_a) <= 5)
+	int	lst_size;
+
+	lst_size = lstsize(stack_a);
+	if (lst_size <= 5)
 		return (sort_small_stack(stack_a, stack_b));
+	else if (lst_size > 5 && lst_size < 500)
+		return (sort_medium_stack(stack_a));
+	
 }
 
 int	main(int argc, char **argv)

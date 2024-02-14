@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algorithms.h                                       :+:      :+:    :+:   */
+/*   sort_medium_stack.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 13:21:59 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/02/10 09:57:40 by aglanuss         ###   ########.fr       */
+/*   Created: 2024/02/10 09:56:43 by aglanuss          #+#    #+#             */
+/*   Updated: 2024/02/11 22:10:08 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ALGORITHMS_H
-# define ALGORITHMS_H
-# include "movements.h"
-# include "utils.h"
+#include "algorithms.h"
 
-int   get_idx_smallest_num(t_list **stack);
-void  sort_small_stack(t_list **stack_a, t_list **stack_b);
-void  sort_three_numbers(t_list **stack_a);
-void  sort_medium_stack(t_list **stack_a);
 
-#endif
+
+void  sort_medium_stack(t_list **stack_a)
+{
+  int chunk;
+  int num;
+  int lst_size;
+
+  lst_size = lstsize(stack_a);
+  chunk = 1;
+  while (chunk <= 5)
+  {
+    num = (lst_size / 5) * chunk;
+    if (chunk == 5)
+      num += lst_size % 5;
+    while (num > num - (lst_size / 5))
+    {
+      num--;
+    }
+    chunk++;
+  }
+}
