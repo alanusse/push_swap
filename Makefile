@@ -6,7 +6,7 @@
 #    By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/06 13:43:05 by aglanuss          #+#    #+#              #
-#    Updated: 2024/03/11 23:54:55 by aglanuss         ###   ########.fr        #
+#    Updated: 2024/03/12 00:21:45 by aglanuss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,8 @@ RM = rm -rf
 INCLUDES = ./includes/push_swap.h ./includes/utils.h ./includes/algorithms.h\
 					 ./includes/movements.h ./includes/lists.h
 
+INCLUDES_TARGETS = $(addprefix src/,$(SRCS))
+
 SRCS = push_swap.c ./sort_algorithms/algorithms.c\
 			./sort_algorithms/sort_medium_stack.c\
 			./sort_algorithms/sort_three_numbers.c\
@@ -30,14 +32,16 @@ SRCS = push_swap.c ./sort_algorithms/algorithms.c\
 			./utils/ft_strlen.c ./utils/is_lst_sorted.c ./movements/push.c\
 			./movements/swap.c ./movements/rotate.c ./movements/rev_rotate.c
 
-OBJS = $(SRCS:.c=.o)
+SRCS_TARGETS = $(addprefix src/,$(SRCS))
+
+OBJS = $(SRCS_TARGETS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(INCLUDES)
+$(NAME): $(OBJS) $(INCLUDES_TARGETS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.c Makefile $(INCLUDES)
+%.o: %.c Makefile $(INCLUDES_TARGETS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
