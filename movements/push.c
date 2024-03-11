@@ -6,11 +6,11 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 11:49:19 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/11 19:13:13 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/11 23:22:20 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/movements.h"
+#include "../includes/movements.h"
 
 static void	push(t_list **stack_a, t_list **stack_b)
 {

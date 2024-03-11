@@ -6,11 +6,11 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:21:48 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/11 19:14:58 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/11 23:52:46 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/algorithms.h"
+#include "../includes/algorithms.h"
 
 /**
  * Find index of smallest number of the stack.

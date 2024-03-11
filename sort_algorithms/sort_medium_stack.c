@@ -6,11 +6,11 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 09:56:43 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/11 19:13:39 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/11 23:45:40 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/movements.h"
+#include "../includes/movements.h"
 
 void  sort_medium_stack(t_list **stack_a)
 {

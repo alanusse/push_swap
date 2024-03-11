@@ -6,11 +6,11 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 18:09:13 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/11 19:13:47 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/11 23:45:44 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/movements.h"
+#include "../includes/movements.h"
 
 static void fill_three_nums(t_list **lst, int *a, int *b, int *c)
 {

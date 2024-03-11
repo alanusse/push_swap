@@ -6,7 +6,7 @@
 #    By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/06 13:43:05 by aglanuss          #+#    #+#              #
-#    Updated: 2024/03/11 23:05:31 by aglanuss         ###   ########.fr        #
+#    Updated: 2024/03/11 23:54:55 by aglanuss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,13 +17,18 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -rf
 
-INCLUDES = ./includes/push_swap.h ./includes/utils.h ./includes/algorithms.h
+INCLUDES = ./includes/push_swap.h ./includes/utils.h ./includes/algorithms.h\
+					 ./includes/movements.h ./includes/lists.h
 
-SRCS = push_swap.c error_exit.c lists.c check_arguments.c push.c algorithms.c sort_medium_stack.c\
-			 sort_three_numbers.c rotate.c rev_rotate.c swap.c is_arguments_sorted.c\
-			 ./utils/ft_atoi.c ./utils/get_lst_content_by_idx.c ./utils/ft_atol.c\
-			 ./utils/ft_isdigit.c ./utils/ft_strchr.c ./utils/ft_strcmp.c\
-			 ./utils/ft_strlen.c ./utils/is_lst_sorted.c\
+SRCS = push_swap.c ./sort_algorithms/algorithms.c\
+			./sort_algorithms/sort_medium_stack.c\
+			./sort_algorithms/sort_three_numbers.c\
+			./utils/check_arguments.c ./utils/error_exit.c ./utils/lists.c\
+			./utils/is_arguments_sorted.c ./utils/ft_atoi.c\
+			./utils/get_lst_content_by_idx.c ./utils/ft_atol.c\
+			./utils/ft_isdigit.c ./utils/ft_strchr.c ./utils/ft_strcmp.c\
+			./utils/ft_strlen.c ./utils/is_lst_sorted.c ./movements/push.c\
+			./movements/swap.c ./movements/rotate.c ./movements/rev_rotate.c
 
 OBJS = $(SRCS:.c=.o)
 

@@ -6,11 +6,11 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 17:08:40 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/11 19:14:40 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/11 23:30:42 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/utils.h"
+#include "../includes/utils.h"
 
 int	is_arguments_sorted(int argc, char **argv)
 {

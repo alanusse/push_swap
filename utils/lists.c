@@ -6,11 +6,11 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:55:16 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/11 17:42:18 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/11 23:54:20 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/lists.h"
+#include "../includes/lists.h"
 
 t_list	*lstnew(int content)
 {

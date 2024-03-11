@@ -1,48 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 11:51:39 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/11 19:13:28 by aglanuss         ###   ########.fr       */
+/*   Created: 2024/01/24 02:24:35 by aglanuss          #+#    #+#             */
+/*   Updated: 2024/03/11 23:45:28 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/movements.h"
+#include "../includes/movements.h"
 
-static void	reverse(t_list **stack)
+static void	swap(t_list **stack)
 {
-	t_list	*current;
 	t_list	*first;
+	t_list	*second;
 
 	if (lstsize(stack) < 2)
 		return ;
 	first = *stack;
-	*stack = first->next;
-	first->next = NULL;
-	current = *stack;
-	while (current->next)
-		current = current->next;
-	current->next = first;
+	second = (*stack)->next;
+	first->next = second->next;
+	second->next = first;
+	*stack = second;
 }
 
-void	ra(t_list **stack_a)
+void	sa(t_list **stack_a)
 {
-	reverse(stack_a);
-	write(1, "ra\n", 3);
+	swap(stack_a);
+	write(1, "sa\n", 3);
 }
 
-void	rb(t_list **stack_b)
+void	sb(t_list **stack_b)
 {
-	reverse(stack_b);
-	write(1, "rb\n", 3);
+	swap(stack_b);
+	write(1, "sb\n", 3);
 }
 
-void	rr(t_list **stack_a, t_list **stack_b)
+void	ss(t_list **stack_a, t_list **stack_b)
 {
-	reverse(stack_a);
-	reverse(stack_b);
-	write(1, "rr\n", 3);
+	swap(stack_a);
+	swap(stack_b);
+	write(1, "ss\n", 3);
 }
