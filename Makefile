@@ -6,7 +6,7 @@
 #    By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/06 13:43:05 by aglanuss          #+#    #+#              #
-#    Updated: 2024/02/04 02:50:52 by aglanuss         ###   ########.fr        #
+#    Updated: 2024/03/11 23:05:31 by aglanuss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,12 +17,13 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -rf
 
-INCLUDES = push_swap.h utils.h libft.h algorithms.h
+INCLUDES = ./includes/push_swap.h ./includes/utils.h ./includes/algorithms.h
 
-SRCS = push_swap.c error_exit.c utils.c lists.c check_arguments.c push.c\
-			 rotate.c rev_rotate.c swap.c is_arguments_sorted.c ft_atoi.c ft_atol.c\
-			 ft_isdigit.c ft_strchr.c ft_strcmp.c ft_strlen.c algorithms.c\
-			 sort_three_numbers.c
+SRCS = push_swap.c error_exit.c lists.c check_arguments.c push.c algorithms.c sort_medium_stack.c\
+			 sort_three_numbers.c rotate.c rev_rotate.c swap.c is_arguments_sorted.c\
+			 ./utils/ft_atoi.c ./utils/get_lst_content_by_idx.c ./utils/ft_atol.c\
+			 ./utils/ft_isdigit.c ./utils/ft_strchr.c ./utils/ft_strcmp.c\
+			 ./utils/ft_strlen.c ./utils/is_lst_sorted.c\
 
 OBJS = $(SRCS:.c=.o)
 

@@ -6,12 +6,11 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 17:08:40 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/28 15:13:59 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/11 19:14:40 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
-#include "libft.h"
+#include "./includes/utils.h"
 
 int	is_arguments_sorted(int argc, char **argv)
 {

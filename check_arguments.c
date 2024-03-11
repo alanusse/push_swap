@@ -6,12 +6,11 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 17:09:28 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/24 12:27:38 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/11 19:12:38 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
-#include "libft.h"
+#include "./includes/utils.h"
 
 /**
  * Check if string is a valid integer number.

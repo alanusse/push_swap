@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   get_lst_content_by_idx.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 16:47:00 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/24 12:27:46 by aglanuss         ###   ########.fr       */
+/*   Created: 2024/03/11 18:41:43 by aglanuss          #+#    #+#             */
+/*   Updated: 2024/03/11 22:21:08 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/utils.h"
 
-long	ft_atol(const char *str)
+int get_lst_content_by_idx(t_list **lst, int idx)
 {
-	long	total;
-	int		sign;
+  int     i;
+  t_list  *current;
 
-	total = 0;
-	sign = 1;
-	while (*str == '\t' || *str == '\n' || *str == '\v' || *str == '\f'
-		|| *str == '\r' || *str == ' ')
-		str++;
-	if (*str == '+' || *str == '-')
-	{
-		if (*str == '-')
-			sign = -1;
-		str++;
-	}
-	while (ft_isdigit(*str))
-	{
-		total = (total * 10) + (*str - '0');
-		str++;
-	}
-	return (total * sign);
+  if (!lst || !*lst)
+    return (0);
+  i = 0;
+  current = *lst;
+  while(i <= idx && current)
+  {
+    if (i == idx)
+      return (current->content);
+    i++;
+    current = current->next;
+  }
+  return (0);
 }

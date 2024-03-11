@@ -6,14 +6,13 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 13:42:35 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/02/10 09:58:09 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/11 19:12:21 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "utils.h"
-#include "libft.h"
-#include "algorithms.h"
+#include "./includes/push_swap.h"
+#include "./includes/utils.h"
+#include "./includes/algorithms.h"
 
 static t_list	*init_stack(t_list **lst, int argc, char **argv)
 {

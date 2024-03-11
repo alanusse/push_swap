@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/14 16:30:43 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/31 23:53:06 by aglanuss         ###   ########.fr       */
+/*   Created: 2024/01/22 16:56:29 by aglanuss          #+#    #+#             */
+/*   Updated: 2024/03/11 19:10:43 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
-# include <unistd.h>
-# include <limits.h>
-# include "lists.h"
+#include "../includes/utils.h"
 
-int		error_exit(void);
-int		check_arguments(int argc, char **argv);
-int		is_arguments_sorted(int argc, char **argv);
-int   is_lst_sorted(t_list **lst);
-int   get_lst_content_by_idx(t_list **lst, int idx);
-
-#endif
+char	*ft_strchr(char *s, int c)
+{
+	if (!s)
+		return (NULL);
+	while (*s)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
+	}
+	return (NULL);
+}

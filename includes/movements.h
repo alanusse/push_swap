@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 18:07:53 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/24 12:29:09 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/11 22:53:07 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define MOVEMENTS_H
 # include "lists.h"
 # include "unistd.h"
+# include "utils.h"
 
 void	sa(t_list **stack_a);
 void	sb(t_list **stack_b);

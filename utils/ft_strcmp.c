@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 16:56:29 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/22 16:56:44 by aglanuss         ###   ########.fr       */
+/*   Created: 2024/01/22 16:57:19 by aglanuss          #+#    #+#             */
+/*   Updated: 2024/03/11 19:10:50 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/utils.h"
 
-char	*ft_strchr(char *s, int c)
+int	ft_strcmp(char *s1, char *s2)
 {
-	if (!s)
-		return (NULL);
-	while (*s)
+	int	i;
+
+	i = 0;
+	if (!s1 || !s2)
+		return (0);
+	while (s1[i] || s2[i])
 	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
+		if (s1[i] != s2[i])
+			return (0);
+		i++;
 	}
-	return (NULL);
+	return (1);
 }

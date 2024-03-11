@@ -6,11 +6,11 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 16:47:48 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/22 16:59:03 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/11 19:10:23 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/utils.h"
 
 int	ft_atoi(const char *str)
 {

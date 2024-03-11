@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 16:55:35 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/22 16:57:33 by aglanuss         ###   ########.fr       */
+/*   Created: 2024/01/22 16:47:00 by aglanuss          #+#    #+#             */
+/*   Updated: 2024/03/11 19:10:29 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/utils.h"
 
-size_t	ft_strlen(char *s)
+long	ft_atol(const char *str)
 {
-	size_t	count;
+	long	total;
+	int		sign;
 
-	if (!s)
-		return (0);
-	count = 0;
-	while (s[count])
-		count++;
-	return (count);
+	total = 0;
+	sign = 1;
+	while (*str == '\t' || *str == '\n' || *str == '\v' || *str == '\f'
+		|| *str == '\r' || *str == ' ')
+		str++;
+	if (*str == '+' || *str == '-')
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	while (ft_isdigit(*str))
+	{
+		total = (total * 10) + (*str - '0');
+		str++;
+	}
+	return (total * sign);
 }

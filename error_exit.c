@@ -6,11 +6,11 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 17:04:02 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/01/30 13:59:31 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/11 17:41:23 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "./includes/utils.h"
 
 int	error_exit(void)
 {
