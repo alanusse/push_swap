@@ -6,18 +6,38 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 11:14:41 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/13 11:14:43 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/13 12:09:50 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/algorithms.h"
 
-static void fill_three_nums(t_list **lst, int *a, int *b, int *c)
-{
-  *a = get_lst_content_by_idx(lst, 0);
-  *b = get_lst_content_by_idx(lst, 1);
-  *c = get_lst_content_by_idx(lst, 2);
-}
+// static void fill_three_nums(t_list **lst, int *a, int *b, int *c)
+// {
+//   *a = get_lst_content_by_idx(lst, 0);
+//   *b = get_lst_content_by_idx(lst, 1);
+//   *c = get_lst_content_by_idx(lst, 2);
+// }
+
+// static void sort_three_numbers(t_list **stack_a)
+// {
+//   int a;
+//   int b;
+//   int c;
+
+//   fill_three_nums(stack_a, &a, &b, &c);
+//   if (a > c && !is_lst_sorted(stack_a))
+//     ra(stack_a);
+//   fill_three_nums(stack_a, &a, &b, &c);
+//   if (b > a && !is_lst_sorted(stack_a))
+//     sa(stack_a);
+//   fill_three_nums(stack_a, &a, &b, &c);
+//   if (a > c && !is_lst_sorted(stack_a))
+//     ra(stack_a);
+//   fill_three_nums(stack_a, &a, &b, &c);
+//   if (a > b && !is_lst_sorted(stack_a))
+//     sa(stack_a);
+// }
 
 static void sort_three_numbers(t_list **stack_a)
 {
@@ -25,18 +45,20 @@ static void sort_three_numbers(t_list **stack_a)
   int b;
   int c;
 
-  fill_three_nums(stack_a, &a, &b, &c);
-  if (a > c && !is_lst_sorted(stack_a))
-    ra(stack_a);
-  fill_three_nums(stack_a, &a, &b, &c);
-  if (b > a && !is_lst_sorted(stack_a))
-    sa(stack_a);
-  fill_three_nums(stack_a, &a, &b, &c);
-  if (a > c && !is_lst_sorted(stack_a))
-    ra(stack_a);
-  fill_three_nums(stack_a, &a, &b, &c);
-  if (a > b && !is_lst_sorted(stack_a))
-    sa(stack_a);
+  while (!is_lst_sorted(stack_a))
+  {
+    a = get_lst_content_by_idx(stack_a, 0);
+    b = get_lst_content_by_idx(stack_a, 1);
+    c = get_lst_content_by_idx(stack_a, 2);
+    if (a > c && !is_lst_sorted(stack_a))
+      ra(stack_a);
+    else if (b > a && !is_lst_sorted(stack_a))
+      sa(stack_a);
+    else if (a > c && !is_lst_sorted(stack_a))
+      ra(stack_a);
+    else if (a > b && !is_lst_sorted(stack_a))
+      sa(stack_a);
+  }
 }
 
 static void  sort_four_numbers(t_list **stack_a, t_list **stack_b)
