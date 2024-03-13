@@ -6,7 +6,7 @@
 #    By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/06 13:43:05 by aglanuss          #+#    #+#              #
-#    Updated: 2024/03/12 00:21:45 by aglanuss         ###   ########.fr        #
+#    Updated: 2024/03/13 11:15:49 by aglanuss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,10 @@ INCLUDES = ./includes/push_swap.h ./includes/utils.h ./includes/algorithms.h\
 
 INCLUDES_TARGETS = $(addprefix src/,$(SRCS))
 
-SRCS = push_swap.c ./sort_algorithms/algorithms.c\
+SRCS = push_swap.c\
 			./sort_algorithms/sort_medium_stack.c\
-			./sort_algorithms/sort_three_numbers.c\
+			./sort_algorithms/sort_small_stack.c\
+			./utils/get_idx_smallest_num.c\
 			./utils/check_arguments.c ./utils/error_exit.c ./utils/lists.c\
 			./utils/is_arguments_sorted.c ./utils/ft_atoi.c\
 			./utils/get_lst_content_by_idx.c ./utils/ft_atol.c\

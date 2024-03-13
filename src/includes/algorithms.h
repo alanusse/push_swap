@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:21:59 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/11 23:19:10 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/13 11:16:54 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 # include "movements.h"
 # include "utils.h"
 
-int   get_idx_smallest_num(t_list **stack);
 void  sort_small_stack(t_list **stack_a, t_list **stack_b);
-void  sort_three_numbers(t_list **stack_a);
 void  sort_medium_stack(t_list **stack_a);
 
 #endif

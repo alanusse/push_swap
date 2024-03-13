@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algorithms.c                                       :+:      :+:    :+:   */
+/*   sort_small_stack.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 13:21:48 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/11 23:52:46 by aglanuss         ###   ########.fr       */
+/*   Created: 2024/03/13 11:14:41 by aglanuss          #+#    #+#             */
+/*   Updated: 2024/03/13 11:14:43 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/algorithms.h"
 
-/**
- * Find index of smallest number of the stack.
-*/
-int  get_idx_smallest_num(t_list **stack)
+static void fill_three_nums(t_list **lst, int *a, int *b, int *c)
 {
-  t_list  *current;
-  int     smallest_idx;
-  int     i;
+  *a = get_lst_content_by_idx(lst, 0);
+  *b = get_lst_content_by_idx(lst, 1);
+  *c = get_lst_content_by_idx(lst, 2);
+}
 
-  smallest_idx = 0;
-  current = *stack;
-  i = 0;
-  while (current)
-  {
-    if (current->content < get_lst_content_by_idx(stack, smallest_idx))
-      smallest_idx = i;
-    current = current->next;
-    i++;
-  }
-  return (smallest_idx);
+static void sort_three_numbers(t_list **stack_a)
+{
+  int a;
+  int b;
+  int c;
+
+  fill_three_nums(stack_a, &a, &b, &c);
+  if (a > c && !is_lst_sorted(stack_a))
+    ra(stack_a);
+  fill_three_nums(stack_a, &a, &b, &c);
+  if (b > a && !is_lst_sorted(stack_a))
+    sa(stack_a);
+  fill_three_nums(stack_a, &a, &b, &c);
+  if (a > c && !is_lst_sorted(stack_a))
+    ra(stack_a);
+  fill_three_nums(stack_a, &a, &b, &c);
+  if (a > b && !is_lst_sorted(stack_a))
+    sa(stack_a);
 }
 
 static void  sort_four_numbers(t_list **stack_a, t_list **stack_b)
