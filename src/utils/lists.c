@@ -6,13 +6,13 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:55:16 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/11 23:54:20 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/13 13:54:56 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/lists.h"
 
-t_list	*lstnew(int content)
+t_list	*lstnew(int content, int idx)
 {
 	t_list	*node;
 
@@ -20,6 +20,7 @@ t_list	*lstnew(int content)
 	if (!node)
 		return (NULL);
 	node->content = content;
+	node->idx = idx;
 	node->next = NULL;
 	return (node);
 }

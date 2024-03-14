@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:50:44 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/11 23:19:32 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/13 13:54:13 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@
 
 typedef struct s_list
 {
+	int					idx;
 	int					content;
 	struct s_list		*next;
 }	t_list;
 
-t_list	*lstnew(int content);
+t_list	*lstnew(int content, int idx);
 void	lstadd_back(t_list **lst, t_list *new);
 void	lstclear(t_list **lst);
 int		lstsize(t_list **lst);

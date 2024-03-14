@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 13:42:35 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/11 19:12:21 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/14 01:58:46 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static t_list	*init_stack(t_list **lst, int argc, char **argv)
 	i = 0;
 	while (++i < argc)
 	{
-		new = lstnew(ft_atoi(argv[i]));
+		new = lstnew(ft_atoi(argv[i]), -1);
 		if (!new)
 		{
 			lstclear(lst);
@@ -32,6 +32,31 @@ static t_list	*init_stack(t_list **lst, int argc, char **argv)
 	}
 	return (*lst);
 }
+
+static void init_indexes(t_list **lst) {
+	t_list *curr;
+	t_list *smallest;
+	int lst_size;
+	int idx;
+
+	lst_size = lstsize(lst);
+	idx = 0;
+	while (lst_size > 0) {
+		smallest = NULL;
+		curr = *lst;
+		while (curr) {
+			if (curr->idx == -1 && (!smallest || curr->content < smallest->content))
+				smallest = curr;
+			curr = curr->next;
+		}
+		if (smallest) {
+			smallest->idx = idx;
+			idx++;
+		}
+		lst_size--;
+	}
+}
+
 
 static void	push_swap(t_list **stack_a, t_list **stack_b)
 {
@@ -58,6 +83,7 @@ int	main(int argc, char **argv)
 	{
 		if (!init_stack(&stack_a, argc, argv))
 			return (error_exit());
+		init_indexes(&stack_a);
 		push_swap(&stack_a, &stack_b);
 		lstclear(&stack_a);
 		lstclear(&stack_b);
