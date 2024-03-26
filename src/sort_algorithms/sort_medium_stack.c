@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 09:56:43 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/22 00:33:11 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/26 14:12:08 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,52 +15,64 @@
 int	contain_chunk_numbers(t_list **stack, int chunk, int chunk_size)
 {
 	t_list	*curr;
-	int			chunk_min;
-	int			chunk_max;
 
 	curr = *stack;
-	chunk_min = chunk * chunk_size - chunk_size;
-	chunk_max = chunk * chunk_size - 1;
 	while (curr)
 	{
-		if (curr->idx >= chunk_min && curr->idx <= chunk_max)
+		if (curr->idx < chunk_size * chunk)
 			return (1);
 		curr = curr->next;
 	}
 	return (0);
 }
 
-void	move_chunk_numbers(t_list **stack_a, int chunk, int chunk_size)
-{
-	int			first_num;
-	int			second_num;
-	int			chunk_min;
-	int			chunk_max;
-	int			i;
-	t_list	*curr;
+// void	move_chunk_numbers(t_list **stack_a, int chunk, int chunk_size)
+// {
+// 	int			first_num;
+// 	int			second_num;
+// 	int			i;
+// 	t_list	*curr;
 
-	first_num = -1;
-	second_num = -1;
-	chunk_min = chunk * chunk_size - chunk_size;
-	chunk_max = chunk * chunk_size - 1;
-	i = 0;
-	curr = *stack_a;
-	while (first_num == -1 && curr)
-	{
-		if (curr->idx >= chunk_min && curr->idx <= chunk_max)
-			first_num = i;
-		curr = curr->next;
-		i++;
-	}
+// 	first_num = -1;
+// 	second_num = -1;
+// 	i = 0;
+// 	curr = *stack_a;
+// 	while (first_num == -1 && curr)
+// 	{
+// 		if (curr->idx >= chunk_min && curr->idx <= chunk_max)
+// 			first_num = i;
+// 		curr = curr->next;
+// 		i++;
+// 	}
+// }
+
+void  get_cheapest_number(t_list **stack_a, int chunk, int chunk_size)
+{
+  t_list  *curr;
+  t_list  *first_num;
+  t_list  *last_num;
+
+  curr = *stack_a;
+  first_num = NULL;
+  last_num = NULL;
+  while (curr)
+  {
+    if (first_num == NULL && curr->idx < (chunk_size * chunk))
+      first_num = curr;
+    if (first_num && curr->idx < (chunk_size * chunk))
+      last_num = curr;
+    curr = curr->next;
+  }
+  if (last_num)
 }
 
 void	chunks_sort(int chunks, t_list **stack_a)
 {
-	int chunk_size;
 	int current_chunk;
+	int chunk_size;
 
-	chunk_size = (lstsize(stack_a) / chunks);
 	current_chunk = 1;
+	chunk_size = (lstsize(stack_a) / chunks);
 	while (current_chunk <= chunks)
 	{
 		if (current_chunk == chunks)
