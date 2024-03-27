@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 13:42:35 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/27 01:05:14 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/27 12:32:10 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,11 @@ static void	push_swap(t_list **stack_a, t_list **stack_b)
 		return (chunks_sort(5, stack_a, stack_b));
 	
 }
-
+/**
+ * 
+ * todo: check MAX_INT error and ./push_swap 12 "" 4 90 case.
+ * 
+*/
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
