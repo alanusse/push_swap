@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:11:26 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/28 12:11:41 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/28 13:17:15 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,32 +113,56 @@ int	min_idx_in_stack(t_list **stack)
 	return (min);
 }
 
+int get_pos_first_smaller_num(t_list **stack_b, int idx)
+{
+  int     i;
+  t_list  *curr;
+
+  i = 0;
+  curr = *stack_b;
+  while (curr)
+  {
+    if (curr->idx < idx)
+      return (i);
+    i++;
+    curr = curr->next;
+  }
+  return (i);
+}
+
 static void	push_number(t_list **stack_a, t_list **stack_b)
 {
 	int	moves;
+  int stack_b_size;
+  int is_middle_top;
 
-	if (lstsize(stack_b) == 0)
-		pb(stack_a, stack_b);
-	else
-	{
-		if ((*stack_a)->idx == 0 || (*stack_a)->idx < min_idx_in_stack(stack_b))
-		{
-			pb(stack_a, stack_b);
-			rb(stack_b);
-		}
-		else
-		{
-			moves = 0;
-			while ((*stack_b)->idx > (*stack_a)->idx)
-			{
-				rb(stack_b);
-				moves++;
-			}
-			pb(stack_a, stack_b);
-			while (--moves >= 0)
-				rrb(stack_b);
-		}
-	}
+  stack_b_size = lstsize(stack_b);
+  if (stack_b_size == 0 || (*stack_a)->idx == 0 || (*stack_a)->idx < min_idx_in_stack(stack_b))
+  {
+    pb(stack_a, stack_b);
+    rb(stack_b);
+  }
+  else
+  {
+    moves = 0;
+    is_middle_top = get_pos_first_smaller_num(stack_b, (*stack_a)->idx) <= stack_b_size / 2;
+    while ((*stack_b)->idx > (*stack_a)->idx)
+    {
+      if (is_middle_top)
+        rb(stack_b);
+      else
+        rrb(stack_a);
+      moves++;
+    }
+    pb(stack_a, stack_b);
+    while (--moves >= 0)
+    {
+      if (is_middle_top)
+        rrb(stack_b);
+      else
+        rb(stack_b);
+    }
+  }
 }
 
 void	sort_by_chunks(int chunks, t_list **stack_a, t_list **stack_b)
