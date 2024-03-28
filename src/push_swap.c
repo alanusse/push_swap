@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 13:42:35 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/27 12:32:10 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/28 00:54:18 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,8 @@ static void	push_swap(t_list **stack_a, t_list **stack_b)
 		return (sort_small_stack(stack_a, stack_b));
 	else if (lst_size > 5 && lst_size < 500)
 		return (chunks_sort(5, stack_a, stack_b));
-	
+	else
+		return (chunks_sort(11, stack_a, stack_b));
 }
 /**
  * 

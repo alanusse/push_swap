@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 09:56:43 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/27 01:03:35 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/03/28 03:18:41 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,44 +70,76 @@ t_list	*get_chunk_cheapest_number(t_list **stack_a, int chunk, int chunk_size)
 		return (last_num);
 }
 
-void	move_number(t_list **stack_a, t_list **stack_b, t_list *number)
+static void	move_number_to_top(t_list **stack_a, t_list *number)
 {
 	int	lst_size;
-	int num_position;
+	int position;
+	int lst_middle;
 
 	lst_size = lstsize(stack_a);
-	num_position = get_position(stack_a, number->content);
-	if (num_position < lst_size - num_position)
+	position = get_position(stack_a, number->content);
+	lst_middle = (lst_size / 2) + (lst_size % 2);
+	if (position < lst_middle)
 	{
-		while (num_position > 0)
+		while (position > 0)
 		{
 			ra(stack_a);
-			num_position--;
+			position--;
 		}
 	}
 	else
 	{
-		while (num_position > 0)
+		while (position < lst_size)
 		{
 			rra(stack_a);
-			num_position--;
+			position++;
 		}
 	}
-	pb(stack_a, stack_b);
 }
 
-/**
- * 0
- * 1
- * 2
- * 3
- * 4 <-
- * 5
- * 6
- * 7
- * 8
- * 9
-*/
+int	min_idx_in_stack(t_list **stack)
+{
+	int			min;
+	t_list	*curr;
+
+	curr = *stack;
+	min = curr->idx;
+	while (curr)
+	{
+		if (curr->idx < min)
+			min = curr->idx;
+		curr = curr->next;
+	}
+	return (min);
+}
+
+static void	push_number(t_list **stack_a, t_list **stack_b)
+{
+	int	moves;
+
+	if (lstsize(stack_b) == 0)
+		pb(stack_a, stack_b);
+	else
+	{
+		if ((*stack_a)->idx == 0 || (*stack_a)->idx < min_idx_in_stack(stack_b))
+		{
+			pb(stack_a, stack_b);
+			rb(stack_b);
+		}
+		else
+		{
+			moves = 0;
+			while ((*stack_b)->idx > (*stack_a)->idx)
+			{
+				rb(stack_b);
+				moves++;
+			}
+			pb(stack_a, stack_b);
+			while (--moves >= 0)
+				rrb(stack_b);
+		}
+	}
+}
 
 void	chunks_sort(int chunks, t_list **stack_a, t_list **stack_b)
 {
@@ -124,7 +156,8 @@ void	chunks_sort(int chunks, t_list **stack_a, t_list **stack_b)
 		while (contain_chunk_numbers(stack_a, current_chunk, chunk_size))
 		{
 			cheapest_number = get_chunk_cheapest_number(stack_a, current_chunk, chunk_size);
-			move_number(stack_a, stack_b, cheapest_number);
+			move_number_to_top(stack_a, cheapest_number);
+			push_number(stack_a, stack_b);
 		}
 		current_chunk++;
 	}
