@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_medium_stack.c                                :+:      :+:    :+:   */
+/*   sort_by_chunks.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/10 09:56:43 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/28 03:18:41 by aglanuss         ###   ########.fr       */
+/*   Created: 2024/03/28 12:11:26 by aglanuss          #+#    #+#             */
+/*   Updated: 2024/03/28 12:11:41 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,7 @@ static void	push_number(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-void	chunks_sort(int chunks, t_list **stack_a, t_list **stack_b)
+void	sort_by_chunks(int chunks, t_list **stack_a, t_list **stack_b)
 {
 	int 		current_chunk;
 	int 		chunk_size;
