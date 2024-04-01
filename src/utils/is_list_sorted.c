@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_exit.c                                       :+:      :+:    :+:   */
+/*   is_list_sorted.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 17:04:02 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/04/01 21:00:01 by aglanuss         ###   ########.fr       */
+/*   Created: 2024/04/01 17:29:15 by aglanuss          #+#    #+#             */
+/*   Updated: 2024/04/01 17:29:48 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/utils.h"
+#include "../includes/lists.h"
 
-int	error_exit(void)
+int	is_sorted(t_list *stack)
 {
-	write(2, "Error\n", 6);
-	exit(EXIT_FAILURE);
-	return (0);
+	while (stack->next != NULL)
+	{
+		if (stack->content > stack->next->content)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }

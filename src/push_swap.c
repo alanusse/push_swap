@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 13:42:35 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/28 12:13:03 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/04/01 12:48:01 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void init_indexes(t_list **lst)
 	int 		idx;
 
 	lst_size = lstsize(lst);
-	idx = 0;
+	idx = 1;
 	while (lst_size > 0)
 	{
 		smallest = NULL;
@@ -69,9 +69,9 @@ static void	push_swap(t_list **stack_a, t_list **stack_b)
 	if (lst_size <= 5)
 		return (sort_small_stack(stack_a, stack_b));
 	else if (lst_size > 5 && lst_size < 500)
-		return (sort_by_chunks(5, stack_a, stack_b));
+		return (sort_large_stack(stack_a, stack_b));
 	else
-		return (sort_by_chunks(11, stack_a, stack_b));
+		return (sort_large_stack(stack_a, stack_b));
 }
 /**
  * 
