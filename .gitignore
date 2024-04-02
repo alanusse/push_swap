@@ -4,3 +4,5 @@ DS_Store/
 *.out
 push_swap
 push_swap_visualizer/
+push_swap_tester/
+visualizer

@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algorithms.h                                       :+:      :+:    :+:   */
+/*   is_list_sorted.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 13:21:59 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/04/02 14:05:46 by aglanuss         ###   ########.fr       */
+/*   Created: 2024/04/01 17:29:15 by aglanuss          #+#    #+#             */
+/*   Updated: 2024/04/01 17:29:48 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ALGORITHMS_H
-# define ALGORITHMS_H
-# include "movements.h"
-# include "utils.h"
+#include "../includes/lists.h"
 
-void	sort_small_stack(t_list **stack_a, t_list **stack_b);
-void	sort_large_stack(t_list **stack_a, t_list **stack_b);
-
-#endif
+int	is_sorted(t_list *stack)
+{
+	while (stack->next != NULL)
+	{
+		if (stack->content > stack->next->content)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
+}

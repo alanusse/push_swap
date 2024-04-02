@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 17:04:02 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/11 23:30:38 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/04/01 21:00:01 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	error_exit(void)
 {
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	exit(EXIT_FAILURE);
 	return (0);
 }

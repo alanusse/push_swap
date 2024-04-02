@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 17:09:28 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/03/11 23:30:34 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/04/02 14:07:48 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,9 @@ static int	is_valid_number(char *str)
 	i = -1;
 	while (str[++i])
 	{
-		if (!ft_strchr("-0123456789", str[i]))
+		if (!ft_strchr("-+0123456789", str[i]))
+			return (0);
+		if (ft_strchr("-+", str[i]) && !ft_strchr("0123456789", str[i + 1]))
 			return (0);
 		if (i > 0 && !ft_strchr("0123456789", str[i]))
 			return (0);
