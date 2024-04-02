@@ -6,7 +6,7 @@
 /*   By: aglanuss <aglanuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 13:42:35 by aglanuss          #+#    #+#             */
-/*   Updated: 2024/04/01 12:48:01 by aglanuss         ###   ########.fr       */
+/*   Updated: 2024/04/02 14:04:10 by aglanuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 static t_list	*init_stack(t_list **lst, int argc, char **argv)
 {
-	int	i;
-	t_list	*new;
+	int			i;
+	t_list		*new;
 
 	i = 0;
 	while (++i < argc)
@@ -33,12 +33,12 @@ static t_list	*init_stack(t_list **lst, int argc, char **argv)
 	return (*lst);
 }
 
-static void init_indexes(t_list **lst)
+static void	init_indexes(t_list **lst)
 {
 	t_list	*curr;
 	t_list	*smallest;
-	int			lst_size;
-	int 		idx;
+	int		lst_size;
+	int		idx;
 
 	lst_size = lstsize(lst);
 	idx = 1;
@@ -48,7 +48,8 @@ static void init_indexes(t_list **lst)
 		curr = *lst;
 		while (curr)
 		{
-			if (curr->idx == -1 && (!smallest || curr->content < smallest->content))
+			if (curr->idx == -1 && (!smallest
+					|| curr->content < smallest->content))
 				smallest = curr;
 			curr = curr->next;
 		}
@@ -73,11 +74,7 @@ static void	push_swap(t_list **stack_a, t_list **stack_b)
 	else
 		return (sort_large_stack(stack_a, stack_b));
 }
-/**
- * 
- * todo: check MAX_INT error and ./push_swap 12 "" 4 90 case.
- * 
-*/
+
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
